@@ -1,0 +1,41 @@
+---
+import ProjectsGrid from "@components/ProjectsGrid.astro";
+import Layout from "@layout/Layout.astro";
+
+const projects = [
+  {
+    name: "OBS Scoreboard",
+    description:
+      "A tool to stream esports tournaments.",
+      link: "https://github.com/kmbua/obs-scoreboard",
+  },
+  {
+    name: "Personal Website",
+    description:
+      "View the source code for the website you're viewing now.",
+    link: "https://github.com/kmbua/personal-website",
+  },
+];
+---
+
+<Layout
+  pageTitle="Projects"
+  description="Various projects I've been working on"
+  type="content"
+>
+  <main class="px-8 pt-16 mx-auto max-w-6xl sm:pt-24 lg:px-16">
+    <div class="flex flex-col mt-4 space-y-8">
+      <div class="flex flex-col space-y-4">
+        <h1
+          class="text-4xl font-bold tracking-tighter sm:text-5xl max-w-[25ch]"
+        >
+          My Projects
+        </h1>
+        <p class="text-primary-300 max-w-[65ch]">
+          I've worked on a variety of projects that you can find the source code for here.
+        </p>
+      </div>
+      <ProjectsGrid projects={projects} />
+    </div>
+  </main>
+</Layout>

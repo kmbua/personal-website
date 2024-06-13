@@ -1,0 +1,51 @@
+---
+const exp = [
+  {
+    title: "England, UK",
+    company: "Audio Engineering (CertHE)",
+    timeRange: "2014 - 2016",
+    description:
+      "Certificate of Higher Education in Audio Engineering. I have experience working with industry standard DAW Software and knowledge of the tools and techniques used to create professional audio media.",
+  },
+];
+---
+
+<section class="mx-auto max-w-5xl sm:px-6 sm:border-l sm:border-primary-700/40">
+  <div class="grid grid-cols-1 gap-y-8 items-baseline md:grid-cols-4">
+    <h2 class="text-lg font-semibold tracking-tight sm:text-xl text-primary-100">
+      Experience
+    </h2>
+    <div class="md:col-span-3">
+      <ul role="list" class="space-y-16">
+        {exp.map((exp) => (
+          <li class="flex flex-col items-start">
+            <div class="flex flex-row justify-between items-baseline pl-2 w-full border-l border-primary-700">
+              <div class="flex flex-col">
+                <div class="flex flex-row gap-2 items-center">
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    src={`/images/svg/${exp.company.toLowerCase()}.svg`}
+                    class="w-5 h-5 rounded-full ring-1 shadow-md shadow-primary-800/5 ring-primary-900"
+                  />
+                  <h3 class="text-base font-semibold tracking-tight sm:max-w-none sm:text-lg max-w-[20ch] text-primary-100">
+                    {exp.company}
+                  </h3>
+                </div>
+
+                <h2 class="text-sm tracking-tight sm:max-w-none sm:text-base max-w-[20ch] text-primary-300">
+                  {exp.title}
+                </h2>
+              </div>
+              <time class="text-sm text-primary-600">{exp.timeRange}</time>
+            </div>
+
+            <p class="z-10 mt-4 text-sm text-primary-300 max-w-[75ch]">
+              {exp.description}
+            </p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
